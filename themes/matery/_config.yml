@@ -23,21 +23,21 @@ menu:
     url: /friends
     icon: fas fa-address-book
   # 二级菜单写法如下
-  Medias:
-   icon: fas fa-list
-   children:
-     - name: Musics
-       url: /musics
-       icon: fas fa-music
-     - name: Movies
-       url: /movies
-       icon: fas fa-film
-     - name: Books
-       url: /books
-       icon: fas fa-book
-     - name: Galleries
-       url: /galleries
-       icon: fas fa-image
+  # Medias:
+   # icon: fas fa-list
+   # children:
+     # - name: Musics
+       # url: /musics
+       # icon: fas fa-music
+     # - name: Movies
+       # url: /movies
+       # icon: fas fa-film
+     # - name: Books
+       # url: /books
+       # icon: fas fa-book
+     # - name: Galleries
+       # url: /galleries
+       # icon: fas fa-image
 
 # Website start time.
 # 站点运行开始时间.
@@ -79,8 +79,8 @@ music:
   autoHide: true    # hide automaticaly
   server: netease   #require	music platform: netease, tencent, kugou, xiami, baidu
   type: playlist    #require song, playlist, album, search, artist
-  id: 503838841     #require	song id / playlist id / album id / search keyword
-  fixed: true       # 开启吸底模式
+  id: 89355785     #require	song id / playlist id / album id / search keyword
+  fixed: false       # 开启吸底模式
   autoplay: false   # 是否自动播放
   theme: '#42b983'
   loop: 'all'       # 音频循环播放, 可选值: 'all', 'one', 'none'
@@ -96,7 +96,7 @@ video:
   enable: false
   showTitle: true
   title: 精彩视频
-  url: # 必填
+  url: /medias/music/赵雷 - 彩虹下面.mp3 # 必填
   pic:
   thumbnails:
   height: # 如：400
@@ -282,23 +282,14 @@ postCalendar: true
 
 # the Gitalk config，default disabled
 # Gitalk 评论模块的配置，默认为不激活
-# gitalk:
-  # enable: true
-  # owner: zohar24
-  # repo: zohar24.github.io
-  # oauth:
-    # clientId: 9d1a553456e67bd27b58
-    # clientSecret: bc4bff1611fb48588eb53e5ee5795f169f6d59ef
-  # admin: zohar24
-  
 gitalk:
   enable: true
-  owner: godweiyang
-  repo: godweiyang.github.io
+  owner: zohar24
+  repo: zohar24.github.io
   oauth:
-    clientId: c3ac6e20697ee5422b43
-    clientSecret: 3ccf19d2ec7e33b55f71aaeec74542a3938772f6
-  admin: godweiyang  
+    clientId: 9d1a553456e67bd27b58
+    clientSecret: bc4bff1611fb48588eb53e5ee5795f169f6d59ef
+  admin: zohar24
   
 
 # the Gitment config，default disabled
