@@ -1,6 +1,6 @@
 ---
 title: Gradle 安装
-top: true
+top: false
 author: zhaohuan
 date: 2022-08-14 15:27:31
 tags:
