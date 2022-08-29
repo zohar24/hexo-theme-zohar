@@ -1,7 +1,7 @@
 ---
 title: Linux常用操作命令
 author: zohar
-top: true
+top: false
 cover: false
 toc: true
 mathjax: true
@@ -224,15 +224,28 @@ tar -zcpvf myarchive.tar.gz /etc/ /opt/ #注-zcpvf顺序不能变 创建并压�
 tar -zxpvf myarchive.tgz -C /tmp/ #解压 .tar.gz
 ```
 
-
-
-
-
-  
-
-
 # 防火墙
 * service iptables status 、firewall-cmd --state或service firewalld status 防火墙状态
+```sh
+# 查看防火墙状态
+service iptables status
+systemctl status firewalld.service
+# 停止防火墙
+service iptables stop
+systemctl stop firewalld.service
+# 启动防火墙
+service iptables start
+systemctl start firewalld.service
+# 重启防火墙
+service iptables restart 
+systemctl restart firewalld.service
+# 永久关闭防火墙
+chkconfig iptables off  
+# 永久关闭后重启
+chkconfig iptables on　
+# 禁用防火墙
+systemctl disable firewalld.service
+```
 
 
 
