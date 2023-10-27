@@ -240,28 +240,47 @@ tar -zxpvf myarchive.tgz -C /tmp/ #解压 .tar.gz
 ```
 
 # 防火墙
-* service iptables status 、firewall-cmd --state或service firewalld status 防火墙状态
-```sh
-# 查看防火墙状态
-service iptables status
-systemctl status firewalld.service
-# 停止防火墙
-service iptables stop
-systemctl stop firewalld.service
-# 启动防火墙
-service iptables start
-systemctl start firewalld.service
-# 重启防火墙
-service iptables restart 
-systemctl restart firewalld.service
-# 永久关闭防火墙
-chkconfig iptables off  
-# 永久关闭后重启
-chkconfig iptables on　
-# 禁用防火墙
-systemctl disable firewalld.service
-```
+* 查看防火墙状态
 
+  ```sh
+  # centos7
+  service iptables status
+  # centos8
+  service firewalld status
+  firewall-cmd --state
+  ```
+
+* 添加端口
+
+  ```shell
+  #centos7
+  /sbin/iptables -I INPUT -p tcp --dport 8080 -j  #添加8080端口
+  #centos8
+  firewall-cmd --zone=public --add-port=8080/tcp --permanent #放行8080端口
+  --permanent #永久生效，没有此参数，重启后失效
+  ```
+
+* 查看开放的端口
+
+  ```sh
+  firewall-cmd --list-all
+  ```
+
+* 重启防火墙
+
+  ```sh
+  # centos7
+  systemctl start iptables.service  #开启防火墙
+  systemctl stop iptables  #关闭防火墙
+  # centos8
+  systemctl stop firewalld.service #（关闭防火墙）
+  systemctl start firewalld.service #（开启防火墙）
+  systemctl disable firewalld.service #（禁止防火墙自启动）
+  systemctl enable firewalld.service #（防火墙随系统开启启动）
+  firewall-cmd –-reload
+  # 设置只允许某个ip访问特定的端口
+  firewall-cmd --permanent --add-rich-rule="rule family="ipv4" source address="127.0.0.1" port protocol="tcp" port="8888" accept"
+  ```
 
 
 
